@@ -10,7 +10,12 @@ public class LevelManager : MonoBehaviour {
         {
             Debug.Log("Level auto load disabled.");
         }
-        Invoke("LoadNextLevel", autoLoadNextLevelAfter);
+        else
+        {
+            Invoke("LoadNextLevel", autoLoadNextLevelAfter);
+            Debug.Log("Loading " + autoLoadNextLevelAfter.ToString());
+        }
+        
     }
 
     public void LoadLevel(string name)
@@ -27,6 +32,7 @@ public class LevelManager : MonoBehaviour {
 
     public void LoadNextLevel()
     {
+        Debug.Log("Loading level index " + (Application.loadedLevel + 1).ToString());
         Application.LoadLevel(Application.loadedLevel + 1);
     }
 }
