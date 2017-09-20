@@ -4,6 +4,7 @@ using System.Collections;
 public class Shooter : MonoBehaviour {
 
     public GameObject projectile, gun;
+
     private GameObject projectileParent;
     private Animator animator;
     private Spawner myLaneSpawner;
